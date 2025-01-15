@@ -17,10 +17,9 @@ app.use(
   })
 );
 
-app.use("/posts", postRoutes);
+app.use("/", postRoutes);
 
-const CONNECTION_URL =
-  "mongodb+srv://MERN:mern123@cluster0.t9oit.mongodb.net/Post?retryWrites=true&w=majority&appName=Cluster0";
+const CONNECTION_URL = process.env.MONGO_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose
